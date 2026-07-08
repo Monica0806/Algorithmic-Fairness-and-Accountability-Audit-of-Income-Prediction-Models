@@ -120,22 +120,6 @@ The project concludes with an algorithm audit that integrates predictive perform
 
 ---
 
-## Repository Structure
-
-```
-Algorithmic-Fairness-Audit/
-│
-├── data/
-├── notebooks/
-├── results/
-├── figures/
-├── README.md
-├── requirements.txt
-└── LICENSE
-```
-
----
-
 ## Future Work
 
 Potential extensions include:
