@@ -1,55 +1,114 @@
-# Algorithmic Fairness and Accountability Audit of Income Prediction Models
+# Towards Algorithmic Accountability: A Fairness Audit of Machine Learning Models
 
-This project evaluates machine learning models not only for predictive accuracy, but also for fairness, transparency, and accountability. It uses the Adult Census Income dataset to study whether income prediction models produce different outcomes across demographic groups such as gender and race.
+## Overview
+
+This project presents an end-to-end evaluation of machine learning systems from an algorithmic accountability perspective. While traditional model evaluation focuses primarily on predictive accuracy, this study investigates how fairness, transparency, interpretability, and accountability can be incorporated into the assessment of machine learning models prior to deployment.
+
+Using the Adult Census Income dataset, the project evaluates demographic disparities across protected groups, applies fairness-aware mitigation techniques, and develops an audit-oriented framework for responsible AI evaluation.
+
+---
 
 ## Motivation
 
-Algorithmic systems are increasingly used in high-impact areas such as hiring, education, finance, healthcare, and public services. These systems may appear accurate overall while still producing unequal outcomes for different demographic groups.
+Machine learning models increasingly influence decisions in domains such as hiring, finance, healthcare, education, and public services. Although these systems may achieve high predictive performance, they can still produce unequal outcomes across demographic groups.
 
-This project treats a machine learning model as a system that should be audited before deployment.
+Responsible deployment therefore requires evaluating not only how accurately a model predicts, but also whether its predictions are fair, transparent, interpretable, and suitable for real-world use.
+
+This project approaches a machine learning model as a system that should undergo an algorithmic audit before deployment.
+
+---
 
 ## Research Question
 
-How do machine learning models trained on socioeconomic data perform across demographic groups, and what fairness risks appear when models are evaluated beyond accuracy?
+**How can machine learning models be systematically evaluated beyond predictive accuracy to identify fairness risks and improve algorithmic accountability?**
+
+---
+
+## Objectives
+
+- Develop reproducible machine learning pipelines for income prediction.
+- Evaluate predictive performance using standard classification metrics.
+- Quantify algorithmic fairness across gender and race.
+- Investigate trade-offs between predictive performance and fairness.
+- Demonstrate fairness-aware mitigation strategies.
+- Produce an audit-oriented evaluation framework for responsible AI systems.
+
+---
 
 ## Dataset
 
-The project uses the Adult Census Income dataset from the UCI Machine Learning Repository.
+**Dataset:** Adult Census Income Dataset
 
-The prediction task is to classify whether an individual earns more than $50K per year.
+**Source:** UCI Machine Learning Repository
 
-## Methods
+The prediction task is binary classification:
 
-The project includes:
+> Predict whether an individual's annual income exceeds \$50,000 based on demographic, educational, and employment-related attributes.
 
-- Data preprocessing and exploratory analysis
-- Logistic Regression and Random Forest models
-- Model evaluation using accuracy, precision, recall, F1-score, and ROC-AUC
-- Fairness evaluation across gender and race
-- Fairness mitigation using threshold optimization
-- Feature importance analysis for model transparency
+---
 
-## Fairness Metrics
+## Methodology
 
-The project evaluates:
+The project consists of the following stages:
 
-- Demographic parity difference
-- Equalized odds difference
-- Selection rate
-- False positive rate
-- False negative rate
+### Data Preparation
 
-## Results
+- Data cleaning
+- Missing value handling
+- Feature preprocessing
+- One-hot encoding
+- Standardization
 
-The models achieved strong predictive performance, but fairness analysis showed differences in selection rates and error rates across demographic groups.
+### Machine Learning Models
 
-Fairness mitigation reduced demographic parity difference, but also changed other metrics, showing that improving one fairness criterion can affect another.
+- Logistic Regression
+- Random Forest
 
-## Key Finding
+### Performance Evaluation
 
-Accuracy alone is not enough to evaluate machine learning systems. Responsible AI systems should be assessed using performance, fairness, transparency, and accountability together.
+Models were evaluated using:
 
-## Tools Used
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- ROC-AUC
+
+### Fairness Evaluation
+
+Fairness was evaluated across protected demographic groups using:
+
+- Demographic Parity Difference
+- Equalized Odds Difference
+- Selection Rate
+- False Positive Rate
+- False Negative Rate
+
+### Fairness Mitigation
+
+To investigate responsible AI techniques, threshold-based post-processing was implemented using **Fairlearn** to reduce demographic disparities while analyzing performance trade-offs.
+
+### Model Transparency
+
+Feature importance analysis was performed to identify the variables contributing most strongly to model predictions, supporting interpretability and transparency.
+
+### Algorithm Audit
+
+The project concludes with an algorithm audit that integrates predictive performance, fairness evaluation, transparency, deployment readiness, and governance considerations into a unified accountability framework.
+
+---
+
+## Key Findings
+
+- Both Logistic Regression and Random Forest achieved strong predictive performance.
+- Fairness evaluation revealed measurable disparities across gender and race.
+- Improving demographic parity introduced trade-offs with other fairness objectives.
+- Predictive accuracy alone is insufficient for evaluating responsible AI systems.
+- Algorithm auditing provides a broader framework for assessing deployment readiness.
+
+---
+
+## Technologies
 
 - Python
 - Pandas
@@ -59,6 +118,44 @@ Accuracy alone is not enough to evaluate machine learning systems. Responsible A
 - Matplotlib
 - Jupyter Notebook
 
-## Relevance
+---
 
-This project is related to algorithmic accountability, fairness-aware machine learning, responsible AI, and trustworthy AI.
+## Repository Structure
+
+```
+Algorithmic-Fairness-Audit/
+│
+├── data/
+├── notebooks/
+├── results/
+├── figures/
+├── README.md
+├── requirements.txt
+└── LICENSE
+```
+
+---
+
+## Future Work
+
+Potential extensions include:
+
+- Auditing recommendation systems
+- Fairness evaluation of large language models
+- Bias analysis in online platforms
+- Counterfactual fairness analysis
+- Real-world algorithm auditing using behavioral data
+- Continuous monitoring of deployed AI systems
+
+---
+
+## Research Areas
+
+- Trustworthy AI
+- Responsible AI
+- Algorithmic Accountability
+- Algorithmic Fairness
+- Explainable AI
+- Machine Learning
+- AI Governance
+- Ethical AI
